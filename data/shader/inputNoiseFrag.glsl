@@ -64,7 +64,7 @@ void main()
 	// that's OK, because we've set the texture to wrap.
 
 	// Do a lookup into the environment map.
-	vec3 envColor = vec3(texture2D(EnvMap, sin(index*widthL)));
+	vec3 envColor = vec3(texture2D(EnvMap, tan(index*widthL)));
 
 	// Add lighting to base color and mix
 	vec3 base = LightIntensity * BaseColor* sin(fract(Pos.x*widthL ));
@@ -96,9 +96,9 @@ vec3 color = envColor;// texture2D(bgl_RenderedTexture, gl_TexCoord[0].xy).rgb;
 
 float sawtooth = fract(cos(Pos.x*widthX ) + sin(Pos.y*widthY) + cos(Pos.z*widthZ ))*widthL;
 float triangle = (abs((widthQ * sawtooth) -widthW));
-float square = smoothstep(.2, .8, (triangle));
-color = mix(DiffuseColor.rgb,BaseColor.rgb, square);
-gl_FragColor.rgb *= color.rgb ;
+float square = tan(smoothstep(.1, .9, (triangle)));
+color = mix(DiffuseColor.rgb, BaseColor.rgb, square);
+gl_FragColor.brg *= color.rgb ;
 
 
 

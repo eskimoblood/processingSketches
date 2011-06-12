@@ -440,7 +440,7 @@ public class Lines extends PApplet {
         tex0 = new GLTexture(this, "1211.jpg");
 
         // shader
-        shader = new GLSLShader(this, "shinyvert.latticecyrtoidea", "shinyfrag.latticecyrtoidea");
+        shader = new GLSLShader(this, "shader/shinyvert.glsl", "shader/shinyfrag.glsl");
     }
 
     float M_Spec_r = .7f;

@@ -20,8 +20,8 @@ vec4 sphere(in float u, in float v, float radius) {
     pSphere.y = radius * sin(v) * sin(u);
     pSphere.z = radius * cos(v);
     pSphere.w = 1.0;
-    //return pSphere;
-	return vec4(u*BaseRadius,v*BaseRadius,radius,1.0);
+    return pSphere;
+	//return vec4(u*BaseRadius,v*BaseRadius,radius,1.0);
 }
 
 
