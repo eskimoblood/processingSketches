@@ -175,7 +175,7 @@ public class GLSLNoiseInput extends PApplet {
     }
 
     private void initShader() {
-        shader = new GLSLShader(this, "inputNoiseVert.glsl", "toonfrag.glsl");
+        shader = new GLSLShader(this, "inputNoiseVert.latticecyrtoidea", "toonfrag.latticecyrtoidea");
         tex = new GLTexture(this);
         tex.init(audio.getPeakSize(), audio.getPeakSize());
         println(audio.getPeakSize());

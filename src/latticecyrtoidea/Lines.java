@@ -1,4 +1,4 @@
-package glsl;
+package latticecyrtoidea;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +117,7 @@ public class Lines extends PApplet {
         cam = new PeasyCam(this, 100);
 //        cam.setMinimumDistance(50);
 //        cam.setMaximumDistance(500);
-        loadStrings("shinyfrag.glsl");
+        loadStrings("shinyfrag.latticecyrtoidea");
         initOpenGL();
         gfx = new ToxiclibsSupport(this);
         p = this;
@@ -440,7 +440,7 @@ public class Lines extends PApplet {
         tex0 = new GLTexture(this, "1211.jpg");
 
         // shader
-        shader = new GLSLShader(this, "shinyvert.glsl", "shinyfrag.glsl");
+        shader = new GLSLShader(this, "shinyvert.latticecyrtoidea", "shinyfrag.latticecyrtoidea");
     }
 
     float M_Spec_r = .7f;
@@ -493,7 +493,7 @@ public class Lines extends PApplet {
 
     static public void main(String args[]) {
         PApplet.main(new String[]{"--bgcolor=#ffffff",
-                "glsl.Lines"});
+                "latticecyrtoidea.Lines"});
     }
 
     private void initGUI() {
