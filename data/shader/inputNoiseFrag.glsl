@@ -4,7 +4,7 @@ const vec3 Xunitvec = vec3(1.0, 0.0, 0.0);
 const vec3 Yunitvec = vec3(0.0, 1.0, 0.0);
 uniform vec3 BaseColor;
 uniform float MixRatio;
-uniform sampler2D EnvMap;
+uniform sampler2D permTexture;
 varying vec3 norm;
 varying vec3 EyeDir;
 varying float LightIntensity;
@@ -19,6 +19,8 @@ uniform float widthZ;
 uniform float widthQ;
 uniform float widthW;
 uniform float widthL;
+
+varying vec2 uv;
 
 float Scale = 1.0;
 
@@ -44,6 +46,8 @@ float find_closest(int x, int  y, float c0)
 
 void main()
 {
+
+    vec3 baseColor = vec3(1.0, 1.0, 1.0);
 	// Compute reflection vector
 	vec3 reflectDir = reflect(EyeDir, norm);
 	// Compute altitude and azimuth angles
@@ -64,11 +68,11 @@ void main()
 	// that's OK, because we've set the texture to wrap.
 
 	// Do a lookup into the environment map.
-	vec3 envColor = vec3(texture2D(EnvMap, tan(index*widthL)));
+	vec3 envColor = vec3(texture2D(permTexture, sin(uv*widthW)));
 
 	// Add lighting to base color and mix
-	vec3 base = LightIntensity * BaseColor* sin(fract(Pos.x*widthL ));
-	envColor = vec3(.95, .95, .95);// mix(envColor, base, MixRatio);
+	vec3 base = LightIntensity * baseColor;
+	envColor =  mix(envColor, base, MixRatio);
 
 	// spherical harmonics lighting
 	// if(gl_FragCoord.x < 420.0)
@@ -80,25 +84,27 @@ void main()
 
 	// add specular
 	// if(gl_FragCoord.x < 420.0)
-		envColor *= .5 + specularIntensity*.5;// * 2.5;
+		envColor *= .5 + specularIntensity * 2.5;
 
-	gl_FragColor = vec4(envColor, 1.0);
 
-vec3 color = envColor;// texture2D(bgl_RenderedTexture, gl_TexCoord[0].xy).rgb;
+vec3 color = texture2D(permTexture, uv).rgb;
+float alpha =texture2D(permTexture, uv).r;
  vec3 luminosity = vec3(0.30, 0.59, 0.11);
  float lum = dot(luminosity, color);
 
- float v = gl_FragCoord.s;
- float h = gl_FragCoord.t;
 
  gl_FragColor = vec4(envColor, 1.0);
 
 
-float sawtooth = fract(cos(Pos.x*widthX ) + sin(Pos.y*widthY) + cos(Pos.z*widthZ ))*widthL;
-float triangle = (abs((widthQ * sawtooth) -widthW));
-float square = tan(smoothstep(.1, .9, (triangle)));
-color = mix(DiffuseColor.rgb, BaseColor.rgb, square);
-gl_FragColor.brg *= color.rgb ;
+
+
+float sawtooth = (cos(Pos.x*widthX )+sin(alpha*100.0) * sin(Pos.y*widthY)  +cos(alpha*100.0) * cos(Pos.y*widthX ));
+float triangle = ((((widthQ * sawtooth))));
+float square = (smoothstep(.3, .7, (triangle)))*widthL ;
+color = mix((DiffuseColor.rgb), (baseColor.brg), square);
+gl_FragColor.rgb*= (color.rgb )+lum*widthQ;
+
+
 
 
 

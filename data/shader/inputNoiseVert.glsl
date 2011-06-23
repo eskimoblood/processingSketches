@@ -128,7 +128,7 @@ uniform vec3 L2m1;
 uniform vec3 L20;
 uniform vec3 L21;
 uniform vec3 L22;
-
+ varying vec2 uv;
 
 ///////////////
 // Main Loop //
@@ -137,7 +137,7 @@ void main() {
 
 	float u = gl_Vertex.x;
 	float v = gl_Vertex.y;
-
+     uv = gl_Vertex.xy;
 	posNorm(u, v);
 
     //phongDir_VS();
@@ -179,7 +179,7 @@ void main() {
 
 
  	gl_Position = gl_ModelViewProjectionMatrix * position;
-   // gl_TexCoord[0] = gl_TextureMatrix[0] * gl_MultiTexCoord0;
+    gl_TexCoord[0] = gl_TextureMatrix[0] * gl_MultiTexCoord0;
 
 
 }

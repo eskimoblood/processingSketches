@@ -60,44 +60,44 @@ public class Controls {
         baseRadiusSlider = controlP5.addSlider("preTranslateY", -10, 10, p.preTranslateY, 10, 410, 100, 10);
         baseRadiusSlider.setWindow(controlWindow);
 
-        controlP5.addSlider("L00_0", -1, 1, 0, 40, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L00_1", -1, 1, 0, 60, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L00_2", -1, 1, 0, 80, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L00_0", -5, 5, 0, 40, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L00_1", -5, 5, 0, 60, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L00_2", -5, 5, 0, 80, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L1m1_0", -1, 1, 0, 120, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L1m1_1", -1, 1, 0, 140, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L1m1_2", -1, 1, 0, 160, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L1m1_0", -5, 5, 0, 120, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L1m1_1", -5, 5, 0, 140, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L1m1_2", -5, 5, 0, 160, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L10_0", -1, 1, 0, 180, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L10_1", -1, 1, 0, 200, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L10_2", -1, 1, 0, 220, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L10_0", -5, 5, 0, 180, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L10_1", -5, 5, 0, 200, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L10_2", -5, 5, 0, 220, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L11_0", -1, 1, 0, 240, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L11_1", -1, 1, 0, 260, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L11_2", -1, 1, 0, 280, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L11_0", -5, 5, 0, 240, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L11_1", -5, 5, 0, 260, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L11_2", -5, 5, 0, 280, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L2m1_0", -1, 1, 0, 300, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L2m1_1", -1, 1, 0, 320, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L2m1_2", -1, 1, 0, 340, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L2m1_0", -5, 5, 0, 300, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L2m1_1", -5, 5, 0, 320, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L2m1_2", -5, 5, 0, 340, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L20_0", -1, 1, 0, 360, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L20_1", -1, 1, 0, 380, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L20_2", -1, 1, 0, 400, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L20_0", -5, 5, 0, 360, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L20_1", -5, 5, 0, 380, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L20_2", -5, 5, 0, 400, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L21_0", -1, 1, 0, 420, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L21_1", -1, 1, 0, 440, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L21_2", -1, 1, 0, 460, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L21_0", -5, 5, 0, 420, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L21_1", -5, 5, 0, 440, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L21_2", -5, 5, 0, 460, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("L22_0", -1, 1, 0, 480, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L22_1", -1, 1, 0, 500, 100, 10).setTab(controlWindow, "color");
-        controlP5.addSlider("L22_2", -1, 1, 0, 520, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L22_0", -5, 5, 0, 480, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L22_1", -5, 5, 0, 500, 100, 10).setTab(controlWindow, "color");
+        controlP5.addSlider("L22_2", -5, 5, 0, 520, 100, 10).setTab(controlWindow, "color");
 
         controlP5.addSlider("widthX", 0, 1f, 0, 40, 300, 10).setTab(controlWindow, "pattern");
         controlP5.addSlider("widthY", 0, 1f, 0, 60, 300, 10).setTab(controlWindow, "pattern");
-        controlP5.addSlider("widthZ", 0, 1f, 0, 80, 300, 10).setTab(controlWindow, "pattern");
+        controlP5.addSlider("widthZ", 0, 100f, 0, 80, 300, 10).setTab(controlWindow, "pattern");
         controlP5.addSlider("widthQ", 0, 100f, 0, 100, 300, 10).setTab(controlWindow, "pattern");
-        controlP5.addSlider("widthW", 0, 5f, 0, 120, 300, 10).setTab(controlWindow, "pattern");
-        controlP5.addSlider("widthL", -1f, 1f, 0, 120, 300, 10).setTab(controlWindow, "pattern");
+        controlP5.addSlider("widthW", 0, 1f, 0, 120, 300, 10).setTab(controlWindow, "pattern");
+        controlP5.addSlider("widthL", 0, 1f, 0, 140, 300, 10).setTab(controlWindow, "pattern");
 
     }
 }
