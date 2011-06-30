@@ -5,7 +5,6 @@ import peasy.PeasyCam;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PVector;
-import remixlab.proscene.Scene;
 
 import javax.media.opengl.GL;
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ public class GLSLNoiseInput extends PApplet {
 
     private GLSLShader shader;
 
-    private Scene scene;
 
     private GLTexture tex;
 
@@ -41,7 +39,7 @@ public class GLSLNoiseInput extends PApplet {
     /*
    * Uniforms used in the shader, controls by p5 slider form {@link Controls}
     */
-    float baseRadius = 1;
+    float baseRadius = 50;
 
     protected int ageDump = 1;
 
@@ -109,7 +107,7 @@ public class GLSLNoiseInput extends PApplet {
     protected float wi = 10;
 
     public void setup() {
-        size(720, 720, GLConstants.GLGRAPHICS);
+        size(1024, 720, GLConstants.GLGRAPHICS);
 
         audio = new Audio(this);
 

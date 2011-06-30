@@ -92,10 +92,10 @@ public class Controls {
         controlP5.addSlider("L22_1", -5, 5, 0, 500, 100, 10).setTab(controlWindow, "color");
         controlP5.addSlider("L22_2", -5, 5, 0, 520, 100, 10).setTab(controlWindow, "color");
 
-        controlP5.addSlider("widthX", 0, 1f, 0, 40, 300, 10).setTab(controlWindow, "pattern");
-        controlP5.addSlider("widthY", 0, 1f, 0, 60, 300, 10).setTab(controlWindow, "pattern");
+        controlP5.addSlider("widthX", 0, 100f, 0, 40, 300, 10).setTab(controlWindow, "pattern");
+        controlP5.addSlider("widthY", 0, 100f, 0, 60, 300, 10).setTab(controlWindow, "pattern");
         controlP5.addSlider("widthZ", 0, 100f, 0, 80, 300, 10).setTab(controlWindow, "pattern");
-        controlP5.addSlider("widthQ", 0, 100f, 0, 100, 300, 10).setTab(controlWindow, "pattern");
+        controlP5.addSlider("widthQ", 0, 10, 0, 100, 300, 10).setTab(controlWindow, "pattern");
         controlP5.addSlider("widthW", 0, 1f, 0, 120, 300, 10).setTab(controlWindow, "pattern");
         controlP5.addSlider("widthL", 0, 1f, 0, 140, 300, 10).setTab(controlWindow, "pattern");
 

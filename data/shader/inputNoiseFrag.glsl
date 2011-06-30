@@ -98,11 +98,17 @@ float alpha =texture2D(permTexture, uv).r;
 
 
 
-float sawtooth = (cos(Pos.x*widthX )+sin(alpha*100.0) * sin(Pos.y*widthY)  +cos(alpha*100.0) * cos(Pos.y*widthX ));
-float triangle = ((((widthQ * sawtooth))));
+float sawtooth = (cos(uv.x*widthX )+sin(alpha*10.0) * sin(uv.y*widthY)  +cos(alpha*10.0) * cos(uv.y*widthX ));
+float triangle = sin((((widthZ * sawtooth))));
 float square = (smoothstep(.3, .7, (triangle)))*widthL ;
 color = mix((DiffuseColor.rgb), (baseColor.brg), square);
-gl_FragColor.rgb*= (color.rgb )+lum*widthQ;
+gl_FragColor.rgb*= (color.grb )+lum*widthQ;
+
+ sawtooth = (sin(uv.x*widthX )+sin(alpha*10.0) * cos(uv.y*widthY)  +cos(alpha*10.0) * sin(uv.y*widthX ));
+ triangle = cos((((widthZ * sawtooth))));
+ square = (smoothstep(.3, .7, (triangle)))*widthL ;
+color = mix((DiffuseColor.rgb), (baseColor.brg), square);
+gl_FragColor.rgb*= (color.brg )+lum*widthQ;
 
 
 
