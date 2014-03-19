@@ -30,7 +30,7 @@ public class Controls {
         baseRadiusSlider = controlP5.addSlider("baseRadius", 0, 500, p.baseRadius, 10, 10, 100, 10);
         baseRadiusSlider.setWindow(controlWindow);
 
-        noiseScaleXSlider = controlP5.addSlider("damp", 0, 3, p.noiseScaleX, 10, 50, 100, 10);
+        noiseScaleXSlider = controlP5.addSlider("damp", 0, 10, p.noiseScaleX, 10, 50, 100, 10);
         noiseScaleXSlider.setWindow(controlWindow);
 
         baseRadiusSlider = controlP5.addSlider("duration", 0, 2000, p.noiseScaleY, 10, 90, 100, 10);

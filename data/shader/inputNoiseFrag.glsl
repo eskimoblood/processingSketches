@@ -98,17 +98,17 @@ float alpha =texture2D(permTexture, uv).r;
 
 
 
-float sawtooth = (cos(uv.x*widthX )+sin(alpha*10.0) * sin(uv.y*widthY)  +cos(alpha*10.0) * cos(uv.y*widthX ));
-float triangle = sin((((widthZ * sawtooth))));
+float sawtooth = (cos(uv.x*widthX )+sin(alpha*10.0) * uv.y*widthY)  +cos(alpha*10.0) * cos(uv.y*widthX );
+float triangle = texture2D(permTexture, vec2(0,uv.x)).x *widthZ * sawtooth;
 float square = (smoothstep(.3, .7, (triangle)))*widthL ;
-color = mix((DiffuseColor.rgb), (baseColor.brg), square);
-gl_FragColor.rgb*= (color.grb )+lum*widthQ;
+color = mix((DiffuseColor.rgb), (baseColor.rgb), square);
+gl_FragColor.rgb*= (color.rgb )+lum ;
 
- sawtooth = (sin(uv.x*widthX )+sin(alpha*10.0) * cos(uv.y*widthY)  +cos(alpha*10.0) * sin(uv.y*widthX ));
- triangle = cos((((widthZ * sawtooth))));
+ sawtooth = sin(uv.x*widthX )+sin(alpha*10.0) * cos(uv.y*widthY)  +uv.y*widthY * sin(uv.y*widthX );
+ triangle = texture2D(permTexture, vec2(0,uv.x)).x*widthZ * sawtooth;
  square = (smoothstep(.3, .7, (triangle)))*widthL ;
-color = mix((DiffuseColor.rgb), (baseColor.brg), square);
-gl_FragColor.rgb*= (color.brg )+lum*widthQ;
+color = mix((DiffuseColor.rgb), (baseColor.rgb), square);
+gl_FragColor.rgb*= (color.rgb )+lum;
 
 
 

@@ -56,7 +56,7 @@ vec4 texture2D_bilinear(  sampler2D tex, vec2 uv )
 }
 float radius (in float u, in float v) {
 
-    return BaseRadius + texture2D_bilinear(permTexture, vec2(u,v)).x * duration;
+    return BaseRadius + (texture2D_bilinear(permTexture, vec2(u,v)).x + texture2D_bilinear(permTexture, vec2(u,0)).x+ texture2D_bilinear(permTexture, vec2(v,0)).x)* duration;
 
 }
 
@@ -71,13 +71,13 @@ vec4 position;
 void posNorm(in float u, in float v) {
 
 
-	position = sphere(u, v, radius(u,v));
-    vec3 tangent = (sphere(u + grid, v, radius(u + grid, v))  - position).xyz;
-	vec3 bitangent = (sphere(u, v + grid, radius(u, v + grid)) - position).xyz;
+	//position = sphere(u, v, radius(u,v));
+    //vec3 tangent = (sphere(u + grid, v, radius(u + grid, v))  - position).xyz;
+	//vec3 bitangent = (sphere(u, v + grid, radius(u, v + grid)) - position).xyz;
 
-	//position = moebius(u, v, radius(u,v));
-  	//vec3 tangent = (moebius(u + grid, v, radius(u + grid, v))  - position).xyz;
-	//vec3 bitangent = (moebius(u, v + grid, radius(u, v + grid)) - position).xyz;
+	position = moebius(u, v, radius(u,v));
+  	vec3 tangent = (moebius(u + grid, v, radius(u + grid, v))  - position).xyz;
+	vec3 bitangent = (moebius(u, v + grid, radius(u, v + grid)) - position).xyz;
 	
 	norm  = gl_NormalMatrix * normalize(cross(tangent, bitangent));
 
